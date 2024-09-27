@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgb(148, 213, 229);
+        }
+
+        tr:hover {
+            cursor: pointer;
+        }
+
+        /* Star styles */
+        .star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 63% 35%, 100% 35%, 72% 57%, 82% 91%, 50% 70%, 18% 91%, 28% 57%, 0% 35%, 37% 35%);
+            opacity: 0;
+            animation: fall 1s forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="p-3 mb-2 bg-secondary text-white text-center">
+        <h2>Tabel Mahasiswa Sistem Informasi Kelautan</h2>
+    </div>
+    <div id="mahasiswa">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                    <th>IPK</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nama female">Anna</td>
+                    <td>Teknik Informatika</td>
+                    <td>3.5</td>
+                </tr>
+                <tr>
+                    <td class="nama male">John</td>
+                    <td>Manajemen</td>
+                    <td>3.8</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        const femaleNames = document.querySelectorAll('.female');
+
+        femaleNames.forEach(name => {
+            name.addEventListener('click', (event) => {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${event.clientX}px`;
+                document.body.appendChild(star);
+
+                // Start animation
+                setTimeout(() => {
+                    star.remove();
+                }, 1000); // Remove star after animation
+            });
+        });
+    </script>
+</body>
+</html>

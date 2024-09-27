@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgb(26, 183, 223);
+        }
+
+        tr:hover {
+            cursor: pointer; /* Mengubah cursor saat hover */
+        }
+        
+        tr:active {
+            animation: borderChange 0.5s forwards; /* Memanggil animasi saat diklik */
+            background-color: rgb(28, 216, 22); /* Ubah warna latar belakang saat diklik */
+        }
+        Dom Event2
+        tr:active {
+            border: 2px solid rgb(117, 183, 216); /* Ubah warna border saat diklik */
+            background-color: rgba(61, 173, 72, 0.411); /* Ubah warna latar belakang saat diklik */
+        }
+        
+        h2:active{
+            border: 2px solid rgb(8, 176, 120); /* Ubah warna border saat diklik */
+            background-color: rgb(91, 203, 53); /* Ubah warna latar belakang saat diklik */
+        }
+        /* Gaya untuk link */
+        tr {
+            text-decoration: none; /* Hapus garis bawah */
+            color: rgb(154, 226, 187); /* Warna default */
+            transition: color 0.3s ease, transform 0.3s ease; /* Animasi perubahan warna dan pergerakan */
+        }
+
+        /* Efek saat hover */
+        tr:hover {
+            color: rgb(223, 59, 160); /* Warna saat hover */
+            transform: translateY(-2px); /* Efek pergerakan ke atas */
+        }
+
+        /* Terapkan animasi pada sel nama */
+        tr.nama {
+            animation: highlight 1s ease-in-out infinite; /* Ulangi animasi */
+        }
+
+        @keyframes headerAnimation {
+            0% {
+                background-color: rgb(150, 196, 234);
+            }
+            50% {
+                background-color: rgb(144, 83, 241); /* Warna saat animasi */
+            }
+            100% {
+                background-color: rgb(200, 200, 255);
+            }
+        }
+
+        /* Terapkan animasi pada header */
+        tr{
+            animation: headerAnimation 1.5s ease-in-out infinite; /* Ulangi animasi */
+        }
+
+        /* Gaya untuk efek mousemove */
+        tr.hovered {
+            background-color: rgba(0, 255, 0, 0.5); /* Warna saat mouse bergerak di atas header */
+            transition: background-color 0.3s ease; /* Transisi untuk perubahan warna */
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="p-3 mb-2 bg-secondary text-white text-center">
+        <h2>Tabel Mahasiswa Sistem Informasi Kelautan</h2>
+    </div>
+    <div id="mahasiswa"></div>
+    <script src="kuis_dom.js"></script>
+</body>
+</html>
